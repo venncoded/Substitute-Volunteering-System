@@ -2,7 +2,7 @@ import unittest
 from src.sms_substitutes import *
 from tests.setup_public import *
 
-class TestTestData(unittest.TestCase):
+class TestSubs(unittest.TestCase):
     def test_add_sub(self):
         start_with_test_data()
         add_sub('user4','abra@cadabra.com', 'doug')
