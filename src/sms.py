@@ -15,7 +15,7 @@ def build_substitutes(cur):
     create_sql = """
         CREATE TABLE substitute_roster(
             subID SERIAL PRIMARY KEY,
-            username VARCHAR(40),
+            username VARCHAR(40) UNIQUE,
             firstName VARCHAR(40),
             middleName VARCHAR(40),
             lastName VARCHAR(40),

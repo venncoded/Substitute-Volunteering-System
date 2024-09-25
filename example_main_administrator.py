@@ -19,7 +19,8 @@ if __name__ == '__main__':
                 selectionSUB = input("""What would you like to do?
                     \r1) View Substitutes
                     \r2) Add Substitute
-                    \r3) Delete subsitute
+                    \r3) Delete Subsitute
+                    \r4) Update Substitute (IN DEVELOPMENT)
                     \r0) Return to main menu
                     \r""")
                 match selectionSUB:
@@ -33,4 +34,17 @@ if __name__ == '__main__':
                     case '3':
                         sub_username=input("What is the username of the sub you wish to delete? ")
                         delete_sub_username(sub_username)
+            case '2':
+                selectionSLOT=input("""What would you like to do?
+                    \r1) View Slots (IN DEVELOPMENT)
+                    \r2) Add Slot (IN DEVELOPMENT)
+                    \r3) Delete Slot (IN DEVELOPMENT)
+                    \r4) Update Slot (IN DEVELOPMENT)
+                    \r0) Return to main menu
+                    \r""")
+                match selectionSLOT:
+                    case '1':
+                        for record in get_all_slots():
+                            print(record)
+
     print("Goodbye!")

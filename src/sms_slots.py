@@ -20,3 +20,9 @@ def update_sub_col(slotID, subID):
         WHERE slotID = %s
     """
     exec_commit(update_sql, [subID, slotID])
+
+def get_all_slots():
+    select_sql="""
+        SELECT * FROM slots
+    """
+    return exec_get_all(select_sql)
