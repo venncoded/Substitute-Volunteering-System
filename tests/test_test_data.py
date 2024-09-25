@@ -11,4 +11,4 @@ class TestTestData(unittest.TestCase):
     def test_insert_slots(self):
         start_with_test_data()
         result = exec_get_all('SELECT * FROM slots')
-        self.assertEqual(4, len(result), "three subs should be in the database")
+        self.assertEqual(4, len(result), "four slots should be in the database")
