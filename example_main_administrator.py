@@ -36,7 +36,7 @@ if __name__ == '__main__':
                         delete_sub_username(sub_username)
             case '2':
                 selectionSLOT=input("""What would you like to do?
-                    \r1) View Slots (IN DEVELOPMENT)
+                    \r1) View Slots
                     \r2) Add Slot (IN DEVELOPMENT)
                     \r3) Delete Slot (IN DEVELOPMENT)
                     \r4) Update Slot (IN DEVELOPMENT)

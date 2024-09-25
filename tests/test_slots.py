@@ -19,6 +19,17 @@ class TestSlots(unittest.TestCase):
 
     def test_update_sub(self):
         start_with_test_data()
-        update_sub_col(1,2)
+        update_sub_col_id(1,2)
         result = exec_get_one('SELECT substituteID FROM slots WHERE slotID = 1')
         self.assertEqual(result[0], 2, 'failed to update.')
+    
+    def test_update_sub_username(self):
+        start_with_test_data()
+        update_sub_col_username(1,'user2')
+        result = exec_get_one('SELECT substituteID FROM slots WHERE slotID = 1')
+        self.assertEqual(result[0], 2, 'failed to update.')
+
+    def test_get_all_subs(self):
+        start_with_test_data()
+        result=get_all_slots()
+        self.assertEqual(4, len(result), "4 slots should be in the database")

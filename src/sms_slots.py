@@ -13,13 +13,21 @@ def delete_slot_id(id):
     """
     exec_commit(delete_sql, [id])
 
-def update_sub_col(slotID, subID):
+def update_sub_col_id(slotID, subID):
     update_sql="""
         UPDATE slots
         SET substituteID = %s
         WHERE slotID = %s
     """
     exec_commit(update_sql, [subID, slotID])
+
+def update_sub_col_username(slotID, sub_username):
+    update_sql="""
+        UPDATE slots
+        SET substituteID = (SELECT subID FROM substitute_roster WHERE username = %s)
+        WHERE slotID = %s
+    """
+    exec_commit(update_sql, [sub_username, slotID])
 
 def get_all_slots():
     select_sql="""
