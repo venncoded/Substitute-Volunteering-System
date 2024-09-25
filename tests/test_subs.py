@@ -16,3 +16,15 @@ class TestSubs(unittest.TestCase):
         result = exec_get_all('SELECT * FROM substitute_roster')
         self.assertEqual(2, len(result), "2 subs should be in the database")
         self.assertEqual(result[1][1],'user3', 'data deletion failed')
+
+    def test_delete_sub_username(self):
+        start_with_test_data()
+        delete_sub_username('user2')
+        result = exec_get_all('SELECT * FROM substitute_roster')
+        self.assertEqual(2, len(result), "2 subs should be in the database")
+        self.assertEqual(result[1][1],'user3', 'data deletion failed')
+
+    def test_get_all_subs(self):
+        start_with_test_data()
+        result=get_all_subs()
+        self.assertEqual(3, len(result), "3 subs should be in the database")

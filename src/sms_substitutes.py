@@ -12,3 +12,15 @@ def delete_sub_id(id):
         DELETE FROM substitute_roster WHERE subID = %s
     """
     exec_commit(delete_sql, [id])
+
+def delete_sub_username(username):
+    delete_sql="""
+        DELETE FROM substitute_roster WHERE username = %s
+    """
+    exec_commit(delete_sql, [username])
+
+def get_all_subs():
+    select_sql="""
+        SELECT * FROM substitute_roster
+    """
+    return exec_get_all(select_sql)
