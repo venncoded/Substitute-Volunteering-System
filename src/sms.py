@@ -1,4 +1,4 @@
-from database_utils import *
+from src.database_utils import *
 
 def build_tables():
     conn = connect()
@@ -33,9 +33,9 @@ def build_slots(cur):
     create_sql = """
         CREATE TABLE slots(
             slotID SERIAL PRIMARY KEY, 
-            periodName VARCHAR(10)
-            start TIMESTAMP,
-            end TIMESTAMP,
+            periodName VARCHAR(10) NOT NULL,
+            startTime TIMESTAMP,
+            endTime TIMESTAMP,
             substituteID int,
             course VARCHAR(50),
             ogTeacher VARCHAR(100),
