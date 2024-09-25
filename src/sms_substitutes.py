@@ -6,3 +6,9 @@ def add_sub(username, emailAddress, firstName=None, middleName=None, lastName=No
          VALUES (%s,%s,%s,%s,%s,%s)
     """
     exec_commit(insert_sql, [username, emailAddress, firstName, middleName, lastName, preferredName])
+
+def delete_sub_id(id):
+    delete_sql="""
+        DELETE FROM substitute_roster WHERE subID = %s
+    """
+    exec_commit(delete_sql, [id])

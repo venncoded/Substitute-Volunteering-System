@@ -39,7 +39,8 @@ def build_slots(cur):
             substituteID int,
             course VARCHAR(50),
             ogTeacher VARCHAR(100),
-            lessonPlanLink VARCHAR(5000)
+            lessonPlanLink VARCHAR(5000),
+            seriesCode VARCHAR(10)
         )
     """
     cur.execute(drop_sql)
